@@ -1,0 +1,87 @@
+/* Import of google font */
+@import url("https://fonts.googleapis.com/css2?family=Red+Hat+Display:wght@500;700;900&display=swap");
+
+/* root styling */
+:root {
+  /* Primary Color variables */
+  --pr-paleBlue: hsl(225, 100%, 94%);
+  --pr-britghtblue: hsl(245, 75%, 52%);
+
+  /* Secondary Color variables */
+  --sc-verypaleBlue: hsl(225, 100%, 98%);
+  --sc-desatBlue: hsl(224, 23%, 55%);
+  --sc-darkBlue: hsl(223, 47%, 23%);
+
+  --White: hsl(0, 0%, 100%);
+
+  /* Font family */
+  --font-family-primary: "Red Hat Display", sans-serif;
+
+  /* Font weight */
+  --fw-medium: 500;
+  --fw-bold: 700;
+  --fw-black: 900;
+}
+
+/* reset */
+body,
+h1,
+h2,
+h3,
+h4,
+h5,
+p {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 100%;
+    font: inherit;
+    vertical-align: baseline;
+}
+
+/* Inherited body */
+body{
+    background-color: var(--pr-paleBlue);
+    font-family: var(--font-family-primary);
+    font-weight: var(--fw-medium);
+}
+
+/* mobile first approach */
+    /* general styling */
+
+
+
+/* attribution section */
+footer {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  padding-top: 50px;
+  overflow: hidden;
+}
+.footerblk {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-content: center;
+  align-items: center;
+  width: 100%;
+  background-color: var(--White);
+  font-family: var(--font-family-primary);
+  font-size: 0.8rem;
+  padding-top: 0.2rem;
+  text-align: center;
+  transition: 300ms ease-in-out;
+}
+
+/* @Media for detecting hover capability if true adds hover anim */
+@media (hover: hover) {
+  footer:hover .footerblk {
+    transform: translateY(-0%);
+  }
+  .footerblk {
+    transform: translateY(100%);
+    text-align: center;
+    transition: 300ms ease-in-out;
+  }
+}
