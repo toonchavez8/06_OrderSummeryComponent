@@ -6,6 +6,7 @@
   /* Primary Color variables */
   --pr-paleBlue: hsl(225, 100%, 94%);
   --pr-britghtblue: hsl(245, 75%, 52%);
+  --pr-britghtblueHover: hsl(245, 75%, 65%);
 
   /* Secondary Color variables */
   --sc-verypaleBlue: hsl(225, 100%, 98%);
@@ -31,24 +32,258 @@ h3,
 h4,
 h5,
 p {
-    margin: 0;
-    padding: 0;
-    border: 0;
-    font-size: 100%;
-    font: inherit;
-    vertical-align: baseline;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
 }
 
 /* Inherited body */
-body{
-    background-color: var(--pr-paleBlue);
-    font-family: var(--font-family-primary);
-    font-weight: var(--fw-medium);
+body {
+  background-color: var(--pr-paleBlue);
+  font-family: var(--font-family-primary);
+  font-weight: var(--fw-medium);
+  overflow: hidden;
 }
 
-/* mobile first approach */
-    /* general styling */
+/* desktop first approach | general styling */
+.cardWrapper {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  gap: 1rem;
+}
+/* card design */
+.card {
+  width: 100%;
+  max-width: 450px;
+  background-color: var(--White);
+  border-radius: 1.2rem;
+  box-shadow: 0px 0px 15px 0px rgba(0, 0, 0, 0.3);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease-in-out;
+}
+/* card hover */
+.card:hover {
+  box-shadow: 0px 0px 25px 0px rgba(0, 0, 0, 0.1);
+  transform: scale(1.015);
+}
 
+/* img container */
+.imgBox {
+  width: 100%;
+  height: 220px;
+  max-width: 450px;
+  overflow: hidden;
+  border-radius: 1.2rem 1.2rem 0 0;
+}
+/* img styling */
+.imgBox img {
+  width: 100%;
+  border-radius: 1.2rem 1.2rem 0 0;
+  transition: all 0.3s ease-in-out;
+}
+/* img styling on hover animation */
+.imgBox:hover img {
+  transform: scale(1.1);
+}
+
+/* Card body styling */
+
+.card-body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  padding: 2rem 0rem;
+}
+
+/* card header styling */
+.header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  gap: 1rem;
+}
+
+.header h1 {
+  font-family: var(--font-family-primary);
+  font-weight: var(--fw-bold);
+  font-size: 1.8rem;
+  transition: all 0.3s ease-in-out;
+}
+
+.header h1:hover {
+  color: var(--pr-britghtblue);
+  transform: scale(1.02);
+}
+
+.header p {
+  font-family: var(--font-family-primary);
+  font-weight: var(--fw-medium);
+  color: var(--sc-desatBlue);
+  font-size: 1rem;
+  text-align: center;
+  max-width: 20em;
+}
+
+/* annual plan box  styling*/
+.plan-container {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  width: fit-content;
+  padding: 1.6rem 1.5rem;
+  border-radius: 1rem;
+  gap: 1rem;
+  background-color: var(--sc-verypaleBlue);
+  margin: 1.2rem 0;
+  transition: all 350ms ease-in-out;
+}
+
+.annualPlan {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  gap: 0.3rem;
+}
+
+.annualPlan h2 {
+  font-family: var(--font-family-primary);
+  font-weight: var(--fw-bold);
+  font-size: 1rem;
+}
+.annualPlan p {
+  font-family: var(--font-family-primary);
+  font-weight: var(--fw-medium);
+  color: var(--sc-desatBlue);
+  font-size: 1rem;
+  text-align: center;
+  max-width: 20em;
+}
+
+.plan-container a {
+  color: var(--pr-britghtblue);
+  font-family: var(--font-family-primary);
+  font-weight: var(--fw-bold);
+  font-size: 0.9rem;
+  text-align: center;
+  margin-left: 5rem;
+  transition: all 150ms ease-in-out;
+}
+/* hover animation for plan section */
+.plan-container:hover {
+  transform: scale(1.05);
+}
+
+.plan-container a:hover {
+  color: var(--pr-britghtblueHover);
+  transform: scale(1.05);
+  text-decoration: none;
+}
+
+/* button box styling section */
+.btnBox {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  max-width: 350px;
+  gap: 1.5rem;
+  margin: 1.2rem 0;
+}
+
+.btnBox .btn {
+  width: 100%;
+  max-width: 320px;
+  border-radius: 0.8rem;
+  background-color: var(--pr-britghtblue);
+  color: var(--White);
+  font-family: var(--font-family-primary);
+  font-weight: var(--fw-bold);
+  font-size: 0.98rem;
+  text-align: center;
+  text-decoration: none;
+  padding: 1rem;
+  transition: all 350ms ease-in-out;
+}
+
+.btnBox .cancel {
+  text-decoration: none;
+  color: var(--sc-desatBlue);
+  font-weight: var(--fw-bold);
+  font-size: 0.9rem;
+  transition: all 350ms ease-in-out;
+}
+
+/* hover animation for btn section*/
+.btnBox .btn:hover {
+  transform: scale(1.04);
+  background-color: var(--pr-britghtblueHover);
+}
+
+.btnBox .btn:active {
+  transform: scale(1.02);
+  background-color: var(--pr-britghtblue);
+  box-shadow: inset 0px 0px 10px 0px rgba(0, 0, 0, 0.5);
+}
+
+.btnBox .cancel:hover {
+  color: var(--sc-darkBlue);
+  transform: scale(1.04);
+}
+
+/* backgroun animaiton */
+section .bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  transform: translate(-50%, -50%);
+  width: 100%;
+  z-index: -1;
+}
+
+section .Wave {
+  background-image: url(/images/pattern-background-desktop.svg) ;
+  background-repeat: repeat-x;
+  transform: scale(1.2);
+  width: 6400px;
+  height: 100%;
+  position: absolute;
+  top: 50px; 
+  left:0;
+  z-index: -1;
+ animation: wave 10s linear infinite; 
+}
+
+@keyframes wave {
+  0% {
+    margin-left: 0;
+  }
+  100% {
+    margin-left: -1640px;
+  }
+}
+
+/* mobile styling */
 
 
 /* attribution section */
