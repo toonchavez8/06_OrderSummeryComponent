@@ -50,17 +50,12 @@ body {
 
 /* desktop first approach | general styling */
 .cardWrapper {
-  width: 100%;
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 0 20px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  height: 100vh;
-  gap: 1rem;
+position: absolute;
+top: 50%;
+left: 50%;
+transform: translate(-50%, -50%);
 }
+
 /* card design */
 .card {
   width: 100%;
@@ -199,6 +194,11 @@ body {
   text-decoration: none;
 }
 
+.plan-container a:active {
+  color: var(--pr-britghtblueHover);
+  transform: scale(1.01);
+}
+
 /* button box styling section */
 .btnBox {
   display: flex;
@@ -244,11 +244,18 @@ body {
   transform: scale(1.02);
   background-color: var(--pr-britghtblue);
   box-shadow: inset 0px 0px 10px 0px rgba(0, 0, 0, 0.5);
+  transition: all 150ms ease-in-out;
 }
 
 .btnBox .cancel:hover {
   color: var(--sc-darkBlue);
   transform: scale(1.04);
+}
+
+.btnBox .cancel:active {
+  transition: all 150ms ease-in-out;
+  color: var(--sc-desatBlue);
+  transform: scale(1.01);
 }
 
 /* backgroun animaiton */
@@ -262,16 +269,16 @@ section .bg {
 }
 
 section .Wave {
-  background-image: url(/images/pattern-background-desktop.svg) ;
+  background-image: url(/images/pattern-background-desktop.svg);
   background-repeat: repeat-x;
   transform: scale(1.2);
-  width: 6400px;
+  width: 4320px;
   height: 100%;
   position: absolute;
-  top: 50px; 
-  left:0;
+  top: 50px;
+  left: -2880px;
   z-index: -1;
- animation: wave 10s linear infinite; 
+  animation: wave 20s linear infinite;
 }
 
 @keyframes wave {
@@ -279,12 +286,91 @@ section .Wave {
     margin-left: 0;
   }
   100% {
-    margin-left: -1640px;
+    margin-left: 1740px;
   }
 }
 
 /* mobile styling */
+@media screen and (max-width: 768px) {
+  /* card styling for mobile */
+  .cardWrapper {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+  .card {
+    max-width: 450px;
+    border-radius: 1rem;
+  }
 
+  .card-body {
+    max-width: 350px;
+    padding: 1.5rem;
+  }
+
+  /* card header for mobile */
+  .header h1 {
+    font-size: 1.5rem;
+    font-weight: var(--fw-black);
+  }
+  .header p {
+    font-size: 1rem;
+    line-height: 1.6rem;
+    max-width: 275px;
+  }
+  /* img container styling for mobile */
+  .imgBox {
+    width: 100%;
+    height: fit-content;
+  }
+
+  /* anual planbox styling for mobile */
+  .plan-container {
+    padding: 0.95rem 1.1rem;
+    margin: 1.2rem 0;
+    background-color: var(--sc-verypaleBlue);;
+  }
+  .annualPlan {
+    width: 100%;
+    gap: 0.2rem;
+  }
+
+  .plan-container a {
+    margin-left: 1.7rem;
+  }
+
+  /* button box styling for mobile */
+  .btnBox {
+    gap: 1.5rem;
+  }
+  .btnBox .btn {
+    max-width: 250px;
+    padding: 0.8rem 1rem;
+  }
+
+  .btnBox .cancel{
+    font-size: 1rem;
+  }
+
+  /* background section */
+  section .bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: -1;
+  }
+
+  section .Wave {
+    background-image: url(/images/pattern-background-mobile.svg);
+    background-repeat: no-repeat;
+    animation: none;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+}
 
 /* attribution section */
 footer {
