@@ -259,7 +259,7 @@ transform: translate(-50%, -50%);
 }
 
 /* backgroun animaiton */
-section .bg {
+div .bg {
   position: absolute;
   top: 0;
   left: 0;
@@ -268,7 +268,7 @@ section .bg {
   z-index: -1;
 }
 
-section .Wave {
+div .Wave {
   background-image: url(/images/pattern-background-desktop.svg);
   background-repeat: repeat-x;
   transform: scale(1.2);
@@ -354,7 +354,7 @@ section .Wave {
   }
 
   /* background section */
-  section .bg {
+  div .bg {
     position: absolute;
     top: 0;
     left: 0;
@@ -362,7 +362,7 @@ section .Wave {
     z-index: -1;
   }
 
-  section .Wave {
+  div .Wave {
     background-image: url(/images/pattern-background-mobile.svg);
     background-repeat: no-repeat;
     animation: none;
